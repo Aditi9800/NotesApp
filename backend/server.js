@@ -1,8 +1,11 @@
 const express = require("express");
 const notes=require('./data/notes');
+const connectDB = require("./config/db");
+const dotenv  = require("dotenv");
 
 const app=express();
-
+dotenv.config();
+connectDB();
 app.get('/',(req,res)=>{
     res.send("api is running..");
 })
